@@ -1,0 +1,32 @@
+@use "colors"
+  
+@mixin divide-border($direction)
+  border-#{$direction}: 0.0625rem solid colors.$border
+
+@mixin center-vertically
+  display: flex
+  align-items: center
+
+@mixin unstyled-button
+  color: inherit
+  font-family: inherit
+  appearance: none
+  background-color: transparent
+  border: none
+
+@mixin subtle-hover
+  &
+    background-color: transparent
+    transition: 0.15s background-color
+
+  &:hover
+    background-color: colors.$border
+    transition: 0.15s background-color
+
+@mixin color-hover
+  &
+    transition: color 0.075s
+
+  &:hover
+    transition: color 0.075s
+    color: colors.$text

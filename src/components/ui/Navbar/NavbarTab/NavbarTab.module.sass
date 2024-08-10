@@ -1,0 +1,19 @@
+@use "mixins"
+@use "colors"
+  
+.button
+  @include mixins.center-vertically
+
+  @include mixins.unstyled-button
+
+  font-size: 0.875rem
+
+  width: 100%
+  padding: 0.3125rem 1.25rem
+  gap: 0.875rem
+
+  cursor: pointer
+  @include mixins.subtle-hover
+
+  &[data-active=true]
+    background-color: colors.$dimmed

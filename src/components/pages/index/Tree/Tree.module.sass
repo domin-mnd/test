@@ -1,0 +1,75 @@
+@use "sizing"
+@use "colors"
+
+.tree
+  position: absolute
+  z-index: 1
+  padding: 1rem 0.75rem
+
+  // Avoid DOM parsing issues by adding tr/td as tree elements
+  td
+    height: max-content !important
+    border-top: none !important
+    padding: 0 !important
+
+  ul, li
+    display: flex
+    flex-direction: column
+    gap: 32px
+    line-height: 0
+
+  & > td > ul > li
+    &::before, &::after
+      display: none
+
+  ul
+    list-style: none
+    padding-left: 1.25rem
+
+    &:first-child
+      padding-left: 0
+
+    li
+      position: relative
+
+      div
+        z-index: 1
+
+      &::before
+        pointer-events: none
+
+        content: ""
+        position: absolute
+        top: -2.375rem
+        left: - calc(1.25rem - (1.75rem / 2))
+
+        width: 0.75rem
+        height: calc(sizing.$table-cell-height - 1.75rem / 2  + 0.375rem)
+
+        border-left: 1px solid colors.$tree
+        border-bottom: 1px solid colors.$tree
+      
+      &::after
+        pointer-events: none
+
+        content: ""
+        position: absolute
+        bottom: 0px
+        left: - calc(1.25rem - (1.75rem / 2))
+
+        width: 0.75rem
+        height: 100%
+
+        border-left: 1px solid colors.$tree
+
+      &:last-child::after
+        display: none
+  
+  li[data-create-mode]
+    position: relative
+    top: -0.625rem
+
+    &:before
+      top: -1.75rem
+      height: calc(sizing.$table-cell-height - 1.75rem / 2 - 0.25rem)
+

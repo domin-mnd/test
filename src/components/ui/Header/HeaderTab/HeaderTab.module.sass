@@ -1,0 +1,13 @@
+@use "mixins"
+  
+.button
+  font-size: 18px
+
+  height: 100%
+  padding: 0 0.9375rem
+
+  cursor: pointer
+
+  @include mixins.unstyled-button
+  @include mixins.divide-border(right)
+  @include mixins.subtle-hover

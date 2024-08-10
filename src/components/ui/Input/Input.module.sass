@@ -1,0 +1,29 @@
+@use "colors"
+  
+.input
+  display: block
+  color: inherit
+  font-family: inherit
+
+  background-color: transparent
+  border: 0.0625rem solid colors.$border
+  outline: none
+
+  width: 100%
+  border-radius: 0.375rem
+  padding: 0.625rem
+
+  font-size: 0.875rem
+
+  &::placeholder
+    color: colors.$placeholder
+
+  /* Chrome, Safari, Edge, Opera */
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button
+    -webkit-appearance: none
+    margin: 0
+
+  /* Firefox */
+  &[type=number]
+    -moz-appearance: textfield

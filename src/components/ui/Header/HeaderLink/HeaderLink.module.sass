@@ -1,0 +1,32 @@
+@use "colors"
+@use "mixins"
+  
+.link
+  @include mixins.center-vertically
+  position: relative
+  
+  font-size: 0.875rem
+  color: colors.$dimmed
+  text-decoration: none
+
+  padding: 0 0.25rem
+  height: 100%
+
+  @include mixins.color-hover
+
+  &[data-active=true]
+    color: colors.$text
+
+    &::after
+      width: 100%
+
+  &::after
+    content: ""
+    display: block
+
+    position: absolute
+    left: 0
+    bottom: 0
+    
+    height: 0.125rem
+    background-color: colors.$text

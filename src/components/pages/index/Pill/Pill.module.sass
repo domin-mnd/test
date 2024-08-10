@@ -1,0 +1,35 @@
+@use "colors"
+@use "sizing"
+  
+.pill
+  display: flex
+
+  width: calc(sizing.$pill-width - 1.5rem)
+  padding: 0.125rem
+  border-radius: 0.375rem
+
+  line-height: 0
+
+  cursor: pointer
+  overflow: hidden
+
+  background-color: transparent
+  transition: all 0.2s
+
+  &:hover
+    width: sizing.$pill-width
+    background-color: colors.$border
+    transition: all 0.2s
+
+  & > *
+    min-width: 1.5rem
+    transition: opacity 0.25s
+
+    &:hover
+      opacity: 0.8
+      transition: opacity 0.25s
+  
+  &[data-editable=true]
+    pointer-events: none
+
+

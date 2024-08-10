@@ -1,0 +1,14 @@
+@use "sizing"
+@use "colors"
+@use "mixins"
+  
+.sidebar
+  list-style: none
+  // position: fixed
+  // top: 0
+  // left: 0
+
+  width: sizing.$navbar-width
+
+  background-color: colors.$layout
+  @include mixins.divide-border(right)

@@ -1,0 +1,88 @@
+@use "colors"
+@use "sizing"
+@use "mixins"
+  
+.header
+  position: relative
+  z-index: 1
+
+  height: sizing.$header-height
+
+  @include mixins.divide-border(bottom)
+  background-color: colors.$layout
+
+  nav
+    display: flex
+
+    @include mixins.divide-border(bottom)
+    
+    height: calc(sizing.$header-height / 2)
+
+.links
+  display: flex
+  gap: 1.25rem
+
+  list-style: none
+
+.menu
+  @include mixins.center-vertically
+
+  gap: 1.25rem
+  padding: 0 1.25rem
+  margin-right: 0.5rem
+
+  & > *
+    color: colors.$dimmed
+    cursor: pointer
+
+    @include mixins.color-hover
+
+.sub
+  display: flex
+  height: calc(sizing.$header-height / 2)
+
+.project-info
+  @include mixins.center-vertically
+  justify-content: space-between
+
+  @include mixins.divide-border(right)
+  color: colors.$dimmed
+
+  width: sizing.$navbar-width
+  height: 100%
+  padding-left: 1.25rem
+  padding-right: 0.5rem
+
+  cursor: pointer
+  @include mixins.subtle-hover
+
+  div
+    display: flex
+    justify-content: center
+    flex-direction: column
+
+    user-select: none
+
+    h1
+      line-height: 1
+      font-size: 0.875rem
+      font-weight: 400
+
+    p
+      font-size: 0.625rem
+      font-weight: 400
+  
+  button
+    padding: 0
+    line-height: 0
+
+    cursor: pointer
+    
+    @include mixins.unstyled-button
+  
+.opened-tabs
+  @include mixins.center-vertically
+  list-style: none
+
+  li
+    height: 100%

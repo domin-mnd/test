@@ -1,0 +1,40 @@
+@use "colors"
+@use "mixins"
+@use "sizing"
+  
+.table
+  width: 100%
+  min-width: 80.5rem
+  position: relative
+  border-collapse: collapse
+  table-layout: fixed
+
+  tbody tr
+    td
+      @include mixins.divide-border(top)
+
+  thead tr > *
+    padding-bottom: 0.75rem
+  
+  th, td
+    font-weight: 400
+    font-size: 0.875rem
+
+    padding-left: 0.75rem
+    padding-right: 0.75rem
+
+    &:first-child
+      width: min-content
+
+    &:nth-child(n + 3)
+      width: 13%
+
+  th
+    text-align: left
+
+    color: colors.$dimmed
+
+  td
+    // @include mixins.center-vertically
+    height: sizing.$table-cell-height
+  
