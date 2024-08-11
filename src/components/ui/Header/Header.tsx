@@ -50,7 +50,7 @@ export function Header({ links, project }: HeaderProps) {
           </div>
 
           {/** There has to be some sort of dropdown I believe. */}
-          <button type='button'>
+          <button type='button' aria-label='Project dropdown'>
             <ChevronDownIcon size={24} fill={COLORS.text} />
           </button>
         </div>

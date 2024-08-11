@@ -16,5 +16,9 @@ export function Navbar() {
     </li>
   ));
 
-  return <aside className={styles.sidebar}>{navbarTabs}</aside>;
+  return (
+    <aside className={styles.sidebar}>
+      <ul>{navbarTabs}</ul>
+    </aside>
+  );
 }
