@@ -37,6 +37,10 @@ export const COLORS = {
 
 /** Mock data: */
 
+export const TITLE = '<3';
+export const META_DESCRIPTION =
+  'Это тестовое задание. Вероятнее всего здесь вы ничего не найдёте.';
+
 export const HEADER_PROJECT: Project = {
   name: 'Название проекта',
   description: 'Аббревиатура',
